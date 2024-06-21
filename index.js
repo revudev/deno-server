@@ -11,3 +11,7 @@ app
 
 const imgSrc = await qrcode(Deno.args[0]);
 Deno.writeTextFile("qrcode.html", `<img src='${imgSrc}' />`);
+
+export default function suma(a, b) {
+  return a + b;
+}
