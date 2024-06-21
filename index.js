@@ -1,4 +1,9 @@
-import { serve } from "https://deno.land/std@0.125.0/http/server.ts";
+import { Application } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 
-console.log("http://localhost:8080/");
-serve((req) => new Response("Hello World\n"), { port: 8000 });
+const app = new Application();
+
+app
+  .get("/hello", (c) => {
+    return "Hello, Abc!";
+  })
+  .start({ port: 8080 });
